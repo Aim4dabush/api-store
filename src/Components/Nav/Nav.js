@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 //fontawesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -6,7 +7,7 @@ import { faHamburger } from "@fortawesome/pro-regular-svg-icons";
 
 function Nav() {
   return (
-    <nav className="navbar navbar-expand-lg bg-light">
+    <nav className="navbar navbar-expand-lg bg-light shadow p-3 mb-5 bg-body rounded">
       <div className="container-fluid">
         <button
           aria-controls="navbarSupportedContent"
@@ -22,14 +23,14 @@ function Nav() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a href="/" className="nav-link active">
+              <NavLink to="/products" className="nav-link active">
                 Products
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a href="/" className="nav-link">
+              <NavLink to="/cart" className="nav-link">
                 Cart
-              </a>
+              </NavLink>
             </li>
           </ul>
         </div>
