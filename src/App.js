@@ -18,6 +18,7 @@ function App() {
   const [cart, setCart] = useState([]);
   const [products, setProducts] = useState([]);
   const [startShopping, setStartShopping] = useState(false);
+  const [totalPrice, setTotalPrice] = useState(0);
 
   useEffect(() => {
     store().then((data) => {
@@ -30,8 +31,10 @@ function App() {
       value={{
         cart: cart,
         products: products,
+        totalPrice: totalPrice,
         setCart: setCart,
         setStartShopping: setStartShopping,
+        setTotalPrice: setTotalPrice,
       }}
     >
       <div className="container-fluid vh-100">

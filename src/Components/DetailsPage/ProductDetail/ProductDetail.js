@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { useParams } from "react-router-dom";
 
 //context
@@ -11,7 +11,7 @@ import { faMinus, faPlus } from "@fortawesome/pro-regular-svg-icons";
 function ProductDetail({ setItemAdded }) {
   const { products, setCart } = useContext(Props);
   const { id } = useParams();
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(1);
   const product = {
     id: products[id - 1]?.id,
     title: products[id - 1]?.title,
@@ -43,6 +43,7 @@ function ProductDetail({ setItemAdded }) {
   const handleAddToCart = (e) => {
     e.preventDefault();
     product.quantity = quantity;
+    product.subtotal = quantity * product.price;
 
     setCart((prev) => {
       return [...prev, product];
@@ -51,6 +52,7 @@ function ProductDetail({ setItemAdded }) {
     setItemAdded((prev) => {
       return !prev;
     });
+    console.log(product);
   };
 
   return (
@@ -59,8 +61,8 @@ function ProductDetail({ setItemAdded }) {
         <div className="card" style={{ width: "50%" }}>
           <div className="row">
             <div className="col-12">
-              <div className="card-header bg-primary text-white">
-                {product.title}
+              <div className="card-header bg-primary text-white text-center">
+                <h3>{product.title}</h3>
               </div>
             </div>
             <div className="col-12">

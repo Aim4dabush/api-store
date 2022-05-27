@@ -7,7 +7,9 @@ function ProductCard({ id, title, image, description, rating, price }) {
       <div className="card">
         <div className="row">
           <div className="col-12">
-            <div className="card-header bg-primary text-white">{title}</div>
+            <div className="card-header bg-primary text-white text-center">
+              <h5>{title}</h5>
+            </div>
           </div>
           <div className="col-12">
             <div className="row">
