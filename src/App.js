@@ -6,9 +6,6 @@ import Nav from "./Components/Nav/Nav";
 //routes
 import routes from "./Routes/Routes";
 
-//styles
-import "./App.scss";
-
 //utilities
 import { store } from "./Utilities/Utilities";
 

@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# API Store
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
 
-## Available Scripts
+- [API Store](#api-store)
+  - [Table of Contents](#table-of-contents)
+  - [Overview](#overview)
+    - [Goals](#goals)
+    - [What I Learned](#what-i-learned)
+  - [Tools](#tools)
+    - [Built With](#built-with)
+    - [Useful Resources](#useful-resources)
+  - [Author](#author)
 
-In the project directory, you can run:
+## Overview
 
-### `npm start`
+Create a shopping app using the [Fake Store API](https://fakestoreapi.com/).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Goals
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- MVP
+  - [x] Connect to the [Fake Store API](https://fakestoreapi.com/) and get their products.
+  - [x] Create a navbar with links to products and cart.
+  - [x] Display all products title, image, and price.
+  - [x] User can click a product to see more details.
+  - [x] User can add products to a cart.
+  - [ ] User can delete products from cart.
+  - [x] User can view products in cart.
+  - [x] Create a purchase form for user.
+- Stretch Goals
+  - [x] Create a welcome page.
+  - [x] Create a thank you page.
+  - [x] Display subtotal in cart.
+  - [x] Display total number of products in cart.
+  - [ ] User can go back to products page from details page.
+  - [ ] User can change quantities of products in cart.
+  - [ ] User can sort products by category
 
-### `npm test`
+### What I Learned
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+I learned how to use react hooks `useEffect`, `useState`, and `useContext`. I learned how to use routes to render components with `react-router-dom v5.3`. Along with routes I also learned `useHistory` and `useParams` with `react-router-dom`.
 
-### `npm run build`
+## Tools
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Built With
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- HTML 5
+- CSS 3
+- React JS
+- Bootstrap
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Useful Resources
 
-### `npm run eject`
+- Bootstrap: [https://getbootstrap.com/](https://getbootstrap.com/)
+- Fake API Store: [https://fakestoreapi.com/](https://fakestoreapi.com/)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Author
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Edward Arasato
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- LinkedIn: [https://www.linkedin.com/in/ed-arasato-74614112a/](https://www.linkedin.com/in/ed-arasato-74614112a/)
