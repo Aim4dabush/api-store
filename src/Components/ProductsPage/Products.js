@@ -13,9 +13,8 @@ function Products() {
     <div className="row">
       {products.map((product) => {
         return (
-          <div className="col-3">
+          <div className="col-3" key={product.id}>
             <ProductCard
-              key={product.id}
               id={product.id}
               title={product.title}
               image={product.image}

@@ -20,7 +20,6 @@ function App() {
 
   useEffect(() => {
     store().then((data) => {
-      console.log(data);
       setProducts(data);
     });
   }, []);
