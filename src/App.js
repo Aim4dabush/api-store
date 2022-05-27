@@ -15,6 +15,7 @@ import { store } from "./Utilities/Utilities";
 export const Props = React.createContext({});
 
 function App() {
+  const [cart, setCart] = useState([]);
   const [products, setProducts] = useState([]);
   const [startShopping, setStartShopping] = useState(false);
 
@@ -26,7 +27,12 @@ function App() {
 
   return (
     <Props.Provider
-      value={{ products: products, setStartShopping: setStartShopping }}
+      value={{
+        cart: cart,
+        products: products,
+        setCart: setCart,
+        setStartShopping: setStartShopping,
+      }}
     >
       <div className="container-fluid vh-100">
         {startShopping && <Nav />}

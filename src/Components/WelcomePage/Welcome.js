@@ -9,7 +9,9 @@ function Welcome() {
   let history = useHistory();
 
   const handleStartShopping = () => {
-    setStartShopping(true);
+    setStartShopping((prev) => {
+      return !prev;
+    });
     history.push("/products");
   };
 
