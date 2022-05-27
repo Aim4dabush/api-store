@@ -8,7 +8,8 @@ function ConfirmTotal() {
   const { cart, totalPrice, setTotalPrice } = useContext(Props);
   let history = useHistory();
 
-  const handleProceedToCheckout = () => {
+  const handleProceedToCheckout = (e) => {
+    e.preventDefault();
     history.push("/checkout");
   };
 
@@ -21,7 +22,7 @@ function ConfirmTotal() {
 
   return (
     <div className="card">
-      <div className="card-header text-center">
+      <div className="card-header text-center bg-success text-white">
         <h3>Confirm Total</h3>
       </div>
       <div className="card-body">
@@ -32,7 +33,7 @@ function ConfirmTotal() {
           </div>
           <div className="col-6 d-flex justify-content-center">
             <button
-              className="btn btn-primary"
+              className="btn btn-success"
               onClick={handleProceedToCheckout}
             >
               Proceed to Checkout
