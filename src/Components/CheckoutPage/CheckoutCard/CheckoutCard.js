@@ -6,7 +6,7 @@ import { Props } from "../../../App";
 function CheckoutCard({ customer, setCustomer, setSubmitOrder }) {
   const { setCart, totalPrice } = useContext(Props);
 
-  const handleOnchange = (e) => {
+  const handleOnChange = (e) => {
     setCustomer((prev) => {
       return { ...prev, [e.target.name]: e.target.value };
     });
@@ -39,7 +39,7 @@ function CheckoutCard({ customer, setCustomer, setSubmitOrder }) {
               name="firstName"
               type="text"
               value={customer.firstName}
-              onChange={handleOnchange}
+              onChange={handleOnChange}
             />
           </div>
           <div className="col-4">
@@ -52,7 +52,7 @@ function CheckoutCard({ customer, setCustomer, setSubmitOrder }) {
               name="lastName"
               type="text"
               value={customer.lastName}
-              onChange={handleOnchange}
+              onChange={handleOnChange}
             />
           </div>
           <div className="col-4">
@@ -65,7 +65,7 @@ function CheckoutCard({ customer, setCustomer, setSubmitOrder }) {
               name="email"
               type="text"
               value={customer.email}
-              onChange={handleOnchange}
+              onChange={handleOnChange}
             />
           </div>
           <div className="col-12">
@@ -78,7 +78,7 @@ function CheckoutCard({ customer, setCustomer, setSubmitOrder }) {
               name="street"
               type="text"
               value={customer.street}
-              onChange={handleOnchange}
+              onChange={handleOnChange}
             />
           </div>
           <div className="col-6">
@@ -91,7 +91,7 @@ function CheckoutCard({ customer, setCustomer, setSubmitOrder }) {
               name="city"
               type="text"
               value={customer.city}
-              onChange={handleOnchange}
+              onChange={handleOnChange}
             />
           </div>
           <div className="col-4">
@@ -104,7 +104,7 @@ function CheckoutCard({ customer, setCustomer, setSubmitOrder }) {
               name="state"
               type="text"
               value={customer.state}
-              onChange={handleOnchange}
+              onChange={handleOnChange}
             />
           </div>
           <div className="col-2">
@@ -117,7 +117,7 @@ function CheckoutCard({ customer, setCustomer, setSubmitOrder }) {
               name="zip"
               type="text"
               value={customer.zip}
-              onChange={handleOnchange}
+              onChange={handleOnChange}
             />
           </div>
           <div className="col-8">
@@ -130,7 +130,7 @@ function CheckoutCard({ customer, setCustomer, setSubmitOrder }) {
               name="cardNumber"
               type="text"
               value={customer.cardNumber}
-              onChange={handleOnchange}
+              onChange={handleOnChange}
             />
           </div>
           <div className="col-2">
@@ -143,7 +143,7 @@ function CheckoutCard({ customer, setCustomer, setSubmitOrder }) {
               name="expiration"
               type="date"
               value={customer.expiration}
-              onChange={handleOnchange}
+              onChange={handleOnChange}
             />
           </div>
           <div className="col-2">
@@ -156,7 +156,7 @@ function CheckoutCard({ customer, setCustomer, setSubmitOrder }) {
               name="code"
               type="text"
               value={customer.code}
-              onChange={handleOnchange}
+              onChange={handleOnChange}
             />
           </div>
           <div className="col-6">

@@ -24,7 +24,7 @@ Create a shopping app using the [Fake Store API](https://fakestoreapi.com/).
   - [x] Display all products title, image, and price.
   - [x] User can click a product to see more details.
   - [x] User can add products to a cart.
-  - [ ] User can delete products from cart.
+  - [x] User can delete products from cart.
   - [x] User can view products in cart.
   - [x] Create a purchase form for user.
 - Stretch Goals
@@ -32,9 +32,9 @@ Create a shopping app using the [Fake Store API](https://fakestoreapi.com/).
   - [x] Create a thank you page.
   - [x] Display subtotal in cart.
   - [x] Display total number of products in cart.
-  - [ ] User can go back to products page from details page.
-  - [ ] User can change quantities of products in cart.
-  - [ ] User can sort products by category
+  - [x] User can go back to products page from details page.
+  - [ ] User can change quantities of products and update cart.
+  - [x] User can sort products by category
 
 ### What I Learned
 

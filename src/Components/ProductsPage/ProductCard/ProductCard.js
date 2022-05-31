@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-function ProductCard({ id, title, image, description, rating, price }) {
+function ProductCard({ id, title, image, description, price }) {
   return (
     <NavLink style={{ textDecoration: "none" }} to={`/products/${id}`}>
       <div className="card">
@@ -20,8 +20,6 @@ function ProductCard({ id, title, image, description, rating, price }) {
                 <div className="card-body">
                   <h5 className="card-title">Description:</h5>
                   <p className="card-text">{description}</p>
-                  <h5 className="card-title">Rating:</h5>
-                  <p className="card-text">{rating}</p>
                   <h5 className="card-title">Price:</h5>
                   <p className="card-text">${price}</p>
                 </div>

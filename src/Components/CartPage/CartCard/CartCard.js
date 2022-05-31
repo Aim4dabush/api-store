@@ -1,12 +1,31 @@
-import React from "react";
+import React, { useContext } from "react";
+
+//context
+import { Props } from "../../../App";
+
+//fontawesome
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrashCan } from "@fortawesome/pro-regular-svg-icons";
 
 function CartCard({ id, title, image, price, quantity, subtotal }) {
+  const { cart, setCart } = useContext(Props);
+
+  const handleDeleteProduct = () => {
+    const index = cart.findIndex((item) => {
+      return item.id === id;
+    });
+    setCart(cart.splice(index, 1));
+  };
+
   return (
     <div className="card">
       <div className="row">
         <div className="col-12">
-          <div className="card-header bg-primary text-white text-center">
+          <div className="card-header bg-primary text-white text-center d-flex justify-content-between">
             <h3>{title}</h3>
+            <button className="btn btn-danger" onClick={handleDeleteProduct}>
+              <FontAwesomeIcon icon={faTrashCan} />
+            </button>
           </div>
         </div>
         <div className="col-12">

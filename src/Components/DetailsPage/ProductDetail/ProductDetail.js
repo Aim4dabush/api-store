@@ -1,25 +1,42 @@
 import React, { useContext, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 
 //context
 import { Props } from "../../../App";
 
 //fontawesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMinus, faPlus } from "@fortawesome/pro-regular-svg-icons";
+import {
+  faMinus,
+  faPlus,
+  faArrowLeft,
+} from "@fortawesome/pro-regular-svg-icons";
 
 function ProductDetail({ setItemAdded }) {
   const { products, setCart } = useContext(Props);
   const { id } = useParams();
+  let history = useHistory();
   const [quantity, setQuantity] = useState(1);
-  const product = {
-    id: products[id - 1]?.id,
-    title: products[id - 1]?.title,
-    image: products[id - 1]?.image,
-    description: products[id - 1]?.description,
-    price: products[id - 1]?.price,
-    rating: products[id - 1]?.rating.rate,
-    quantity: null,
+  const item = products.find((product) => {
+    return product.id === id;
+  });
+
+  const handleAddToCart = (e) => {
+    e.preventDefault();
+    item.quantity = quantity;
+    item.subtotal = quantity * item.price;
+
+    setCart((prev) => {
+      return [...prev, item];
+    });
+
+    setItemAdded((prev) => {
+      return !prev;
+    });
+  };
+
+  const handleBack = () => {
+    history.push("/products");
   };
 
   const handleDecrement = () => {
@@ -40,29 +57,17 @@ function ProductDetail({ setItemAdded }) {
     });
   };
 
-  const handleAddToCart = (e) => {
-    e.preventDefault();
-    product.quantity = quantity;
-    product.subtotal = quantity * product.price;
-
-    setCart((prev) => {
-      return [...prev, product];
-    });
-
-    setItemAdded((prev) => {
-      return !prev;
-    });
-    console.log(product);
-  };
-
   return (
     <div className="row">
       <div className="col-12 d-flex justify-content-center">
         <div className="card" style={{ width: "50%" }}>
           <div className="row">
             <div className="col-12">
-              <div className="card-header bg-primary text-white text-center">
-                <h3>{product.title}</h3>
+              <div className="card-header bg-primary text-white text-center d-flex justify-content-between">
+                <h3>{item.title}</h3>
+                <button className="btn btn-danger" onClick={handleBack}>
+                  <FontAwesomeIcon icon={faArrowLeft} /> Back
+                </button>
               </div>
             </div>
             <div className="col-12">
@@ -70,22 +75,22 @@ function ProductDetail({ setItemAdded }) {
                 <div className="col-3">
                   <img
                     className="img-fluid"
-                    src={product.image}
-                    alt={product.title}
+                    src={item.image}
+                    alt={item.title}
                   />
                 </div>
                 <div className="col-9">
                   <div className="card-body">
                     <h5 className="card-title">Description:</h5>
-                    <p className="card-text">{product.description}</p>
+                    <p className="card-text">{item.description}</p>
                     <div className="row">
                       <div className="col-6">
                         <h5 className="card-title">Rating:</h5>
-                        <p className="card-text">{product.rating.rate}</p>
+                        <p className="card-text">{item.rating}</p>
                       </div>
                       <div className="col-6">
                         <h5 className="card-title">Price:</h5>
-                        <p className="card-text">${product.price}</p>
+                        <p className="card-text">${item.price}</p>
                       </div>
                     </div>
                     <div className="row mt-4">

@@ -13,25 +13,31 @@ export const Props = React.createContext({});
 
 function App() {
   const [cart, setCart] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [products, setProducts] = useState([]);
   const [startShopping, setStartShopping] = useState(false);
   const [totalPrice, setTotalPrice] = useState(0);
 
   useEffect(() => {
-    store().then((data) => {
-      setProducts(data);
-    });
-  }, []);
+    if (loading) {
+      store().then((data) => {
+        setProducts(data);
+        setLoading(false);
+      });
+    }
+  }, [loading]);
 
   return (
     <Props.Provider
       value={{
         cart: cart,
+        loading: loading,
         products: products,
-        totalPrice: totalPrice,
         setCart: setCart,
+        setProducts: setProducts,
         setStartShopping: setStartShopping,
         setTotalPrice: setTotalPrice,
+        totalPrice: totalPrice,
       }}
     >
       <div className="container-fluid vh-100">
