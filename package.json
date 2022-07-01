@@ -3,7 +3,7 @@
   "name": "api-store",
   "version": "0.1.0",
   "engines": {
-    "node": "17.8.0"
+    "node": "16.14.2"
   },
   "private": true,
   "dependencies": {
