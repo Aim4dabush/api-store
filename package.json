@@ -2,6 +2,9 @@
   "homepage": "https://aim4dabush.github.io/api-store",
   "name": "api-store",
   "version": "0.1.0",
+  "engines": {
+    "node": "17.8.0"
+  },
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
