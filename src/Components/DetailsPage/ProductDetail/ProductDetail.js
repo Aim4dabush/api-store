@@ -18,7 +18,7 @@ function ProductDetail({ setItemAdded }) {
   let history = useHistory();
   const [quantity, setQuantity] = useState(1);
   const item = products.find((product) => {
-    return product.id === id;
+    return product.id === parseInt(id);
   });
 
   const handleAddToCart = (e) => {
@@ -37,6 +37,7 @@ function ProductDetail({ setItemAdded }) {
 
   const handleBack = () => {
     history.push("/products");
+    console.log(item);
   };
 
   const handleDecrement = () => {
@@ -64,7 +65,7 @@ function ProductDetail({ setItemAdded }) {
           <div className="row">
             <div className="col-12">
               <div className="card-header bg-primary text-white text-center d-flex justify-content-between">
-                <h3>{item.title}</h3>
+                <h3>{item?.title}</h3>
                 <button className="btn btn-danger" onClick={handleBack}>
                   <FontAwesomeIcon icon={faArrowLeft} /> Back
                 </button>
@@ -75,22 +76,22 @@ function ProductDetail({ setItemAdded }) {
                 <div className="col-3">
                   <img
                     className="img-fluid"
-                    src={item.image}
-                    alt={item.title}
+                    src={item?.image}
+                    alt={item?.title}
                   />
                 </div>
                 <div className="col-9">
                   <div className="card-body">
                     <h5 className="card-title">Description:</h5>
-                    <p className="card-text">{item.description}</p>
+                    <p className="card-text">{item?.description}</p>
                     <div className="row">
                       <div className="col-6">
                         <h5 className="card-title">Rating:</h5>
-                        <p className="card-text">{item.rating}</p>
+                        <p className="card-text">{item?.rating.rate}</p>
                       </div>
                       <div className="col-6">
                         <h5 className="card-title">Price:</h5>
-                        <p className="card-text">${item.price}</p>
+                        <p className="card-text">${item?.price}</p>
                       </div>
                     </div>
                     <div className="row mt-4">

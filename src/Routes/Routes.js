@@ -1,4 +1,4 @@
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 
 //components
 import Cart from "../Components/CartPage/Cart";
@@ -9,7 +9,10 @@ import Welcome from "../Components/WelcomePage/Welcome";
 
 export default (
   <Switch>
-    <Route exact component={Welcome} path="/" />
+    <Route exact path="/">
+      <Redirect to="/api-store" />
+    </Route>
+    <Route component={Welcome} path="/api-store" />
     <Route component={Cart} path="/cart" />
     <Route component={Checkout} path="/checkout" />
     <Route exact component={Products} path="/products" />
